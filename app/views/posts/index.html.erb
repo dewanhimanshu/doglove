@@ -1,0 +1,10 @@
+<h1> Listing All the animals for sale or adaption </h1>
+<% @post.each do |p| %>
+<h3>Title</h3>
+<%= p.title %>
+<br/>
+<h3>Content</h3>
+<%= p.content %>
+<br/>
+<hr/>
+<% end %>
