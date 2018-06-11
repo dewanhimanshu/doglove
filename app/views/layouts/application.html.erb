@@ -14,9 +14,21 @@
   </head>
 
   <body>
+  
+    
     <% if user_signed_in? %>
-    <p>current_user.name</p>
-    <% end %>
+  <li>
+    <%= current_user.email %>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
+    
+
+
     <%= yield %>
   </body>
 </html>

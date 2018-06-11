@@ -3,4 +3,4 @@
 <h3><%= @post.content %></h3>
 <br/>
 <%= link_to "Edit", controller: "posts", action: "edit", id: @post %>
-<%= link_to "Delete", controller: "posts", action: "destroy", id: @post . method: :delete%>
+<%= link_to('delete', destroy_it_path , method: :delete ) %>
