@@ -2,5 +2,8 @@
 <br/>
 <h3><%= @post.content %></h3>
 <br/>
+
+<% if user_signed_in? && current_user.id==@post.user_id %>
 <%= link_to "Edit", controller: "posts", action: "edit", id: @post %>
 <%= link_to('delete', destroy_it_path , method: :delete ) %>
+<% end %>

@@ -6,14 +6,17 @@ class PostsController < ApplicationController
 
 	def new
 		@post = Post.new
-	end
+    end
 	
 	def create 
-			Post.create(
+			@post = Post.create(
 				title: params[:post][:title],
 				content: params[:post][:content],
 				)
-			redirect_to 'index'
+			
+			@post.user_id = current_user.id
+			@post.save
+			redirect_to @post
 	end
 
 	def show
