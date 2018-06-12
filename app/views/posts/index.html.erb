@@ -6,6 +6,9 @@
 <h3>Content</h3>
 <%= p.content %>
 <br/>
+<h3>Pic of It </h3>
+ <%= image_tag p.avatar.url(:thumb) %>
+ <br/>
 <%= link_to "Interesed in it", controller: "posts", action: "show", id: p %>
 <hr/>
 <% end %>

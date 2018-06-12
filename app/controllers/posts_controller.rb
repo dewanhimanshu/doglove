@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 			@post = Post.create(
 				title: params[:post][:title],
 				content: params[:post][:content],
+				avatar:  params[:post][:avatar],
 				)
 			
 			@post.user_id = current_user.id
@@ -32,6 +33,7 @@ class PostsController < ApplicationController
 		 @post.update(
 				title: params[:post][:title],
 				content: params[:post][:content],
+				avatar:  params[:post][:avatar],
 				)
 			redirect_to @post
 
