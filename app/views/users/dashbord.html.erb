@@ -1,0 +1,12 @@
+<h1>User Dashbord</h1>
+<% @user.posts.each do |p| %>
+ <h3>Title</h3>
+<%= p.title %>
+<br/>
+<h3>Content</h3>
+<%= p.content %>
+<br/>
+<h3>Pic of It </h3>
+<%= image_tag p.avatar.url(:thumb) %>
+ <br/>
+<% end %>
