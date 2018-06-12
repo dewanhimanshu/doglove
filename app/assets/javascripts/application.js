@@ -14,3 +14,9 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery-fileupload
+//= require jquery-fileupload/basic-plus
+
+//= require jquery-fileupload/angularjs
+
+//= require jquery-fileupload/jquery-ui
