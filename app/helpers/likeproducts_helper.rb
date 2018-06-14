@@ -1,0 +1,2 @@
+module LikeproductsHelper
+end

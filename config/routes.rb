@@ -7,8 +7,14 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
    devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-resources :posts
+resources :posts do
+	member do
+    put "like", to: "posts#upvote"
+    put "dislike", to: "posts#downvote"
+  end
+ end
 delete 'posts/:id' => 'posts#destroy' , as: 'destroy_it'
+
 root 'posts#index'
 
 get 'users/dashbord'

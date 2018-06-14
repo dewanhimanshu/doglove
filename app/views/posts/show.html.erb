@@ -12,7 +12,12 @@
 <%= link_to "Edit", controller: "posts", action: "edit", id: @post %>
 <%= link_to('delete', destroy_it_path , method: :delete ) %>
 <% end %> 
+ Submitted <%= time_ago_in_words(@post.created_at) %><br/> 
+      by <%= @post.user.email %>
 
-<h3>Posted By</h3>
-<%= @post.user.email %>
+<br/>
+<%= link_to "Upvote", like_post_path(@post), method: :put %>
+<%= @post.get_upvotes.size %><br/>
+<%= link_to "Downvote", dislike_post_path(@post), method: :put %><br/>
+ <%= @post.get_downvotes.size %>
 

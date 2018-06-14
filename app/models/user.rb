@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable , :omniauthable ,  omniauth_providers: [:google_oauth2]
 
    has_many :posts 
+    has_many :likeproducts
+     
    
 def self.from_omniauth(access_token)
     
